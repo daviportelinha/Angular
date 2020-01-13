@@ -1,0 +1,33 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products">
+
+  <h3>
+
+  <a [title] = "product.name + ' details'"> <!-- [] obrigatória para "setar" o título do link--> 
+
+    {{ product.name }} <!-- {{}} Renderiza o valor em texto-->
+
+  </a> <!-- tag para link-->
+  
+  </h3> <!--tag de cabeçalho, formatação--> 
+  
+  <p *ngIf = "product.description">
+
+    Description: {{ product.description }}
+
+  </p> <!-- tag para parágrafo, adiciona nova linha-->
+
+  <button (click) = "share()"> <!-- função "share"-->
+
+    Share
+  
+  </button>
+
+  <app-product-alerts [product] = "product">
+  </app-product-alerts>
+  
+</div>
+<!-- 
+  app-root: base da página
+-->
